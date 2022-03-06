@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+*{
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+.heading{
+ padding: 25px 50px;
+ font-size: 200%;
+}
+.task-label{
+ display: block;
+ padding: 25px 50px;
+ font-size: 200%;
+}
+.input-task{
+  padding: 20px 50px;
+  margin: 10px 20px;
+  border-style: double;
+}
+.btn{
+  padding: 20px 50px;
+  margin: 10px 20px;
+  border-style: double;
+  background-color: white;
+  color: black;
+  font-weight: bolder;
+}
+.task-list{
+  padding: 10px 30px;
+  margin: 10px 20px;
+  border-style: double;
+}
+.todo{
+  font-weight: bold;
+  font-size: large;
+}

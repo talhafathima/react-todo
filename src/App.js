@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, {useState} from "react";
+import {nanoid} from "nanoid";
+import Form from "./components/Form";
+import Todo from "./components/Todo";
+function App(props) {
+const [tasks, setTasks] = useState(props.tasks);
+ function addTask(name){
+  const task={id:nanoid(),name:name}
+  setTasks([...tasks,task])
+ }
+ function deleteTask(id){
+   const newtodolist=tasks.filter((task)=>id!==task.id)
+   setTasks(newtodolist)
+ }
+ const todolist=tasks.map(task=><Todo id={task.id} name={task.name} deleteTask={deleteTask} />)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form addTask={addTask}/>
+      {todolist}
     </div>
   );
 }
